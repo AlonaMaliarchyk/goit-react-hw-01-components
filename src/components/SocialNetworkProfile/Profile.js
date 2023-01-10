@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Profile = ({
     username,
     tag,
@@ -8,14 +10,14 @@ const Profile = ({
     views,
     likes,
         }) => (
-    <div class="profile">
-    <div class="description">
-        <img src={avatar} alt={username} width="180" class="avatar"/>
+    <div>
+    <div>
+        <img src={avatar} alt={username} width="180"/>
         <p>{username}</p>
         <p>{tag}</p>
             <p>{location}</p>
     </div>
-    <ul class="stats">
+    <ul>
     <li>
         <span>Followers</span>
         <span> {stats.followers}</span>
@@ -28,7 +30,15 @@ const Profile = ({
         <span>Likes</span>
                 <span> {stats.likes}</span>
     </li>
-  </ul>
+    </ul>
     </div>
 );
+
+Profile.propTypes = {
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired,
+}
 export default Profile;
