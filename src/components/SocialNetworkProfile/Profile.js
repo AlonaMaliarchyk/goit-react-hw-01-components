@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import ProfileCss from './ProfileStyle.module.css';
 
 const Profile = ({
     username,
@@ -10,25 +11,25 @@ const Profile = ({
     views,
     likes,
         }) => (
-    <div>
-    <div>
-        <img src={avatar} alt={username} width="180"/>
-        <p>{username}</p>
-        <p>{tag}</p>
-            <p>{location}</p>
+<div className={ProfileCss.profile}>
+    <div className={ProfileCss.description}>
+        <img className={ProfileCss.img} src={avatar} alt={username} width="180"/>
+        <p className={ProfileCss.name}>{username}</p>
+        <p className={ProfileCss.tag}>{tag}</p>
+        <p className={ProfileCss.location}>{location}</p>
     </div>
-    <ul>
-    <li>
-        <span>Followers</span>
-        <span> {stats.followers}</span>
+    <ul className={ProfileCss.stats}>
+    <li className={ProfileCss.items}>
+<span className={ProfileCss.label}>Followers</span>
+        <span className={ProfileCss.quantity}> {stats.followers}</span>
     </li>
-    <li>
-        <span>Views</span>
-                <span> {stats.views}</span>
+    <li className={ProfileCss.items}>
+        <span className={ProfileCss.label}>Views</span>
+    <span className={ProfileCss.quantity}> {stats.views}</span>
     </li>
-    <li>
-        <span>Likes</span>
-                <span> {stats.likes}</span>
+    <li className={ProfileCss.items}>
+        <span className={ProfileCss.label}>Likes</span>
+        <span className={ProfileCss.quantity}> {stats.likes}</span>
     </li>
     </ul>
     </div>
