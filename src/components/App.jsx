@@ -9,7 +9,6 @@ import TransactionHistory from './TransactionHistory/transaction';
 
 
 export const App = () => {
-  console.log(profiles);
   return (
     <div>
       <Profile

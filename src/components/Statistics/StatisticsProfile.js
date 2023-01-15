@@ -5,8 +5,7 @@ function UsersStatistics({ title, stats }) {
     return (
         <div>
         <section className={StatisticsCss.statistics}>
-            <h2 className={StatisticsCss.title}>{title}</h2>
-
+                {title && <h2 className={StatisticsCss.title}>{title}</h2>}
                 <ul className={StatisticsCss.statList}>
                     {stats.map(stat => (
                     <li key={stat.id} style={{'backgroundColor': getRandomColor()}} className={StatisticsCss.item}>
